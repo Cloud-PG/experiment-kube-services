@@ -1,0 +1,21 @@
+<header>Kay's task list</header>
+<body>
+    {{task_list}}
+
+
+<form action="/tasks" method="POST">
+New Task:
+  <input type="text" name="task" value="">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<button id="myButton" class="float-left submit-button" >DELETE ALL</button>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://192.168.99.104/tasks/delete";
+    };
+</script>
+</body>
+
