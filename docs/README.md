@@ -26,11 +26,11 @@
   1. Download all files from "To do list"
   2. Create a volumn for database in vm  
     `docker-machine ssh <vm name> "mkdir ./data"`
-  3. Make sure the file contains Dockerfile, app.py, requirements.txt and templates
-    Build image by  `docker build --tag=<image name> .`
+  3. Make sure the file contains Dockerfile, app.py, requirements.txt and templates  
+    Build image by  `docker build --tag=<image name> .`  
     The image name should be the same with service:web:image: in docker-compose.yml file
-  4. Start running
-    `docker swarm init`
+  4. Start running  
+    `docker swarm init`  
     `docker stack deploy -c docker-compose.yml <stack name>`
 - Functions
   1. add new task 
