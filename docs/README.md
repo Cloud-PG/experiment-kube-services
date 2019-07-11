@@ -37,4 +37,22 @@
   2. delete all tasklist
   3. view all tasks in list
 
+## Simple task list on Kubernetes 
+
+- Install kubectl and minikube
+- Reused the image before
+- Steps
+  1. Start minikube
+  2. Set the environment variables  
+    `eval $(minikube docker-env) `
+  3. Create a deployment  
+    `kubectl create -f deployment hello-application.yml`  
+    The deployment:spec:template:spec:containers:image should be same as the built docker local image
+  4. Create a service and thus expose the deployment  
+    `kubectl expose deployment hello-world --type=NodePort --name=tasklist-service`
+  5. View the pods  
+    `kubectl get pods --selector="run=load-balancer-example" --output=wide`
+  6. Get the node address by `kubectl cluster-info` and node port by `kubectl describe services tasklist-service`
+- Kubernetes Deployment includes the function from pods and replicaSet. It can by updated by `edit` and `apply` and do not need to stop the service.
+
 
