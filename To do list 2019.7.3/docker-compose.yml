@@ -1,8 +1,7 @@
 version: "3"
 services:
   web:
-    # replace username/repo:tag with your name and image details
-    image: mckay1999/get-started:part2
+    build: ./WebService
     deploy:
       replicas: 5
       resources:
